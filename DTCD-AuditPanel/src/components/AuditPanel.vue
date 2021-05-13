@@ -131,95 +131,6 @@ export default {
     timestampToDateString(timestamp) {
       return timestamp ? new Date(timestamp * 1000).toUTCString() : '';
     },
-    getLogs() {
-      return [
-        {
-          id: 1,
-          username: 'john_snow',
-          message:
-            'test message interface color was changed to another one test message interface color was changed to another one test message interface color was changed to another onetest message interface color was changed to another one',
-          timestamp: 1620401176,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 2,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1620055576,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 3,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619969176,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 4,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619882776,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 5,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619796376,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 6,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619709976,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 7,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619623576,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 8,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619537176,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 9,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619450776,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 10,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619364376,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 11,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619277976,
-          pluginName: 'Workspace',
-        },
-        {
-          id: 12,
-          username: 'john',
-          message: 'test message interface color was changed to another one',
-          timestamp: 1619191576,
-          pluginName: 'LiveDash',
-        },
-      ];
-    },
     handleRowChange() {
       this.currentPage = 0;
     },
@@ -229,8 +140,8 @@ export default {
       this.currentPage = 0;
       this.loadingData = true;
       const ds = await this.$root.dataSourceSystem.createDataSource({
-        cacheTime: this.ttl,
-        search: this.otlRequest,
+        cache_ttl: this.ttl,
+        original_otl: this.otlRequest,
         twf: Date.parse(this.range.end) / 1000,
         tws: Date.parse(this.range.start) / 1000,
         type: 'OTL',
