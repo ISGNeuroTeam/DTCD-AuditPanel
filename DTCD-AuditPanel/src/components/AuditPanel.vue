@@ -69,7 +69,11 @@
           <i class="fas fa-angle-left fa-lg"></i>
         </button>
         <div class="page-counter">{{ currentPage + 1 }} from {{ pageCount }}</div>
-        <button class="pagination-button" @click="currentPage++" :disabled="currentPage == pageCount - 1">
+        <button
+          class="pagination-button"
+          @click="currentPage++"
+          :disabled="currentPage == pageCount - 1"
+        >
           <i class="fas fa-angle-right fa-lg"></i>
         </button>
         <div>
@@ -86,6 +90,7 @@
 <script>
 import DatePicker from 'v-calendar/lib/components/date-picker.umd';
 export default {
+  name: 'AuditPanel',
   components: {
     DatePicker,
   },
@@ -114,7 +119,10 @@ export default {
       return this.auditLogs.length ? Math.ceil(this.auditLogs.length / this.rowLimit) : 1;
     },
     logsToShow() {
-      return this.auditLogs.slice(this.currentPage * this.rowLimit, (this.currentPage + 1) * this.rowLimit);
+      return this.auditLogs.slice(
+        this.currentPage * this.rowLimit,
+        (this.currentPage + 1) * this.rowLimit
+      );
     },
   },
   methods: {

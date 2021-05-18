@@ -1,9 +1,9 @@
-<template functional>
+<template>
   <AuditPanel />
 </template>
 
 <script>
-import AuditPanel from '@/components/AuditPanel.vue';
+import AuditPanel from '@/components/AuditPanel';
 
 export default {
   name: 'PluginComponent',
